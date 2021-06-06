@@ -1,8 +1,37 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox prefHeight="268.0" prefWidth="202.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="67.0" text="Season" />
+                  <ComboBox fx:id="cbSeason" prefHeight="25.0" prefWidth="141.0" />
+               </children>
+            </HBox>
+            <VBox prefHeight="288.0" prefWidth="202.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="199.0" text="Activities" />
+                  <ListView fx:id="lvActivities" prefHeight="224.0" prefWidth="202.0" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tbPeople" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="FirstName" />
+          <TableColumn prefWidth="75.0" text="LastName" />
+        </columns>
+      </TableView>
+   </children>
+</HBox>
