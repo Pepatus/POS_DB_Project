@@ -187,53 +187,17 @@ public class Controller implements Initializable {
         });
         tclastName.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        tclastName.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Player, String>>() {
+        tclastName.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Person, String>>() {
 
             @Override
-            public void handle(TableColumn.CellEditEvent<Player, String> t) {
-                ((Player) t.getTableView().getItems().get(t.getTablePosition().getRow())).setLastName(t.getNewValue());
+            public void handle(TableColumn.CellEditEvent<Person, String> t) {
+                ((Person) t.getTableView().getItems().get(t.getTablePosition().getRow())).setLastName(t.getNewValue());
 
             }
 
         });
 
-        tcgoals.setCellFactory(TextFieldTableCell.<Player, Integer>forTableColumn(new IntegerStringConverter()));
 
-        tcgoals.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Player, Integer>>() {
-
-            @Override
-            public void handle(TableColumn.CellEditEvent<Player, Integer> t) {
-                ((Player) t.getTableView().getItems().get(t.getTablePosition().getRow())).setGoals(t.getNewValue());
-
-            }
-
-        });
-
-        ObservableList<String> teams = FXCollections.observableArrayList("Rapid", "Salzburg", "Bayern München",
-                "Augsburg");
-        tcteam.setCellFactory(ComboBoxTableCell.forTableColumn(teams));
-        tcteam.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Player, String>>() {
-
-            @Override
-            public void handle(TableColumn.CellEditEvent<Player, String> t) {
-                ((Player) t.getTableView().getItems().get(t.getTablePosition().getRow())).setTeam(t.getNewValue());
-
-            }
-
-
-        });
-        tcnumberOfGames.setCellFactory(TextFieldTableCell.<Player, Integer>forTableColumn(new IntegerStringConverter()));
-
-        tcnumberOfGames.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Player, Integer>>() {
-
-            @Override
-            public void handle(TableColumn.CellEditEvent<Player, Integer> t) {
-
-                ((Player) t.getTableView().getItems().get(t.getTablePosition().getRow())).setGoals(t.getNewValue());
-
-            }
-
-        });
     }
 
 

@@ -34,7 +34,7 @@ public class Person {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
+    public void setLastName(String lastname) {
         this.lastname = lastname;
     }
 
@@ -44,4 +44,5 @@ public class Person {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
 }

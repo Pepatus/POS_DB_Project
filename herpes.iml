@@ -8,6 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="javafx-swt" level="project" />
+    <orderEntry type="library" name="javafx.media" level="project" />
     <orderEntry type="library" name="ojdbc8" level="project" />
   </component>
 </module>
