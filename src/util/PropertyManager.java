@@ -17,7 +17,6 @@ public class PropertyManager {
     public static PropertyManager getInstance(){
         if(instance == null){
             instance = new PropertyManager();
-
         }
         return instance;
     }
@@ -28,7 +27,7 @@ public class PropertyManager {
     }
 
     private void fillProperties() {
-        try(FileReader fileReader = new FileReader(this. filename)){
+        try(FileReader fileReader = new FileReader(this.filename)){
             this.props.load(fileReader);
         }
         catch (FileNotFoundException e){

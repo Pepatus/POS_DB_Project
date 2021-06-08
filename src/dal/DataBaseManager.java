@@ -1,7 +1,7 @@
 package dal;
 
-import bll.Person;
-import util.PropertyManager;
+import bll.*;
+import util.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -69,6 +69,58 @@ public class DataBaseManager {
         return allPersons;
     }
 
+    public List<Season> getAllSeasons(){
+        List<Season> allSeasons = new ArrayList<>();
+        Statement stmt;
+        ResultSet resultSet;
+
+        String query = "SELECT * FROM season";
+        try {
+            try(Connection con = createConnection()){ // Wird automatisch am ende von try geschlossen
+                //Statement wird erzeugt
+                stmt = con.createStatement();
+                resultSet = stmt.executeQuery(query);
+                //resultset durchiterieren
+                while(resultSet.next()){
+                    Season newSeason = new Season(resultSet.getInt(1), resultSet.getString(2));
+                    allSeasons.add(newSeason);
+
+                }
+                return allSeasons;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return allSeasons;
+    }
+
+    public List<Activity> getAllActivities(){
+        List<Activity> allActivities = new ArrayList<>();
+        Statement stmt;
+        ResultSet resultSet;
+
+        String query = "SELECT * FROM activity";
+        try {
+            try(Connection con = createConnection()){ // Wird automatisch am ende von try geschlossen
+                //Statement wird erzeugt
+                stmt = con.createStatement();
+                resultSet = stmt.executeQuery(query);
+                //resultset durchiterieren
+                while(resultSet.next()){
+                    Activity newActivity = new Activity(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(3));
+                    allActivities.add(newActivity);
+
+                }
+                return allActivities;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return allActivities;
+    }
+/*
 
     public boolean updateBook(Book s){
         boolean result = false;
@@ -170,5 +222,5 @@ public class DataBaseManager {
         }
 
         return s;
-    }
+    }*/
 }
